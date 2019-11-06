@@ -14,4 +14,8 @@ SELECT o.id, s.CompanyName FROM [Order] AS 'o' JOIN Shipper AS 's' ON o.ShipVia 
 
 -- Display the name and quantity of the products ordered in order with Id 10251. Sort by ProductName. Shows 3 records.
 
+SELECT p.ProductName, od.quantity FROM OrderDetail as 'od' JOIN Product as 'p' ON od.ProductId = p.Id WHERE od.OrderId = '10251' ORDER BY p.ProductName;
+
 -- Display the OrderID, Customer's Company Name and the employee's LastName for every order. All columns should be labeled clearly. Displays 16,789 records.
+
+SELECT o.id, c.CompanyName, e.LastName FROM [Order] as 'o' JOIN Customer as 'c' JOIN Employee as 'e' ON o.customerid = c.id AND o.EmployeeId = e.id;
